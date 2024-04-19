@@ -48,8 +48,6 @@
 
 ###
 
-<br clear="both">
-
 <img src="https://raw.githubusercontent.com/granth23/granth23/output/snake.svg" alt="Snake animation" />
 
 ###
