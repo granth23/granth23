@@ -1,8 +1,8 @@
-<h2 align="left">Hi, my name is Granth Bagadia and I'm a student at BITS Pilani</h2>
+<h2 align="left">Hi, my name is <a href="https://www.linkedin.com/in/granth-bagadia/">Granth Bagadia</a> and I'm a student at <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a></h2>
 
 ###
 
-<img align="right" height="225" src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif"  />
+<img align="right" height="190" src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif"  />
 
 ###
 
@@ -10,11 +10,12 @@
 
 ###
 
+<br>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=granth23&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gruvbox&locale=en&hide_border=false" height="150" alt="stats graph"  />
-  <img src="https://streak-stats.demolab.com?user=granth23&locale=en&mode=weekly&theme=gruvbox&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=granth23&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=gruvbox&hide_border=false" height="149" alt="languages graph"  />
+  <img src="https://github-readme-stats.vercel.app/api?username=granth23&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gruvbox&locale=en&hide_border=false" height="140" alt="stats graph"  />
+  <img src="https://streak-stats.demolab.com?user=granth23&locale=en&mode=weekly&theme=gruvbox&hide_border=false&border_radius=5" height="140" alt="streak graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=granth23&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=gruvbox&hide_border=false" height="140" alt="languages graph"  />
 </div>
 
 ###
