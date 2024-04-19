@@ -2,6 +2,15 @@
 
 ###
 
+<img align="right" height="225" src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif"  />
+
+###
+
+<h4 align="left">I'm Granth Bagadia, a passionate computer science student at BITS Pilani. Fuelled by my love for AI and coding, I'm dedicated to unravelling technology's possibilities, aspiring to innovate and shape the future.<br><br>🤖 Proficient in Machine Learning algorithms and implementation using the same.<br>👨‍💻 Proficient in programming languages such as Python, JavaScript, C and C++.<br>🤖 Experience working with DBMS such as Firebase, Mongo and MySQL, PostgreSQL.<br>👨‍💻 Knowledge of web development frameworks, such as Flask, Springboot and React.<br>🤖 Expertise in Back-End Web Development using Python, Flask and React.<br>👨‍💻 Expertise in team leading at various Companies and Award-winning projects.</h4>
+
+###
+
+
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=granth23&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gruvbox&locale=en&hide_border=false" height="150" alt="stats graph"  />
   <img src="https://streak-stats.demolab.com?user=granth23&locale=en&mode=weekly&theme=gruvbox&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
@@ -36,14 +45,6 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="30" alt="csharp logo"  />
 </div>
-
-###
-
-<img align="right" height="225" src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif"  />
-
-###
-
-<h4 align="left">I'm Granth Bagadia, a passionate computer science student at BITS Pilani. Fuelled by my love for AI and coding, I'm dedicated to unravelling technology's possibilities, aspiring to innovate and shape the future.<br><br>🤖 Proficient in Machine Learning algorithms and implementation using the same.<br>👨‍💻 Proficient in programming languages such as Python, JavaScript, C and C++.<br>🤖 Experience working with DBMS such as Firebase, Mongo and MySQL, PostgreSQL.<br>👨‍💻 Knowledge of web development frameworks, such as Flask, Springboot and React.<br>🤖 Expertise in Back-End Web Development using Python, Flask and React.<br>👨‍💻 Expertise in team leading at various Companies and Award-winning projects.</h4>
 
 ###
 
