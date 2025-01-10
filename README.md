@@ -10,15 +10,6 @@
 
 ###
 
-<br>
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=granth23&locale=en&mode=weekly&theme=gruvbox&hide_border=false&border_radius=5" height="140" alt="streak graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=granth23&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=gruvbox&hide_border=false" height="140" alt="languages graph"  />
-</div>
-
-###
-
 <div align="center">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="47" height="35" alt="gmail logo"  />
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="47" height="35" alt="instagram logo"  />
