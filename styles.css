@@ -1017,12 +1017,6 @@ img.u-pull-left{
     top              : 50%;
     left             : 0;
 }
-.text-huge-title{
-    --text-huge : 8rem;
-    font-size   : var(--text-huge);
-    line-height : 1.0740;
-    margin-top  : 0;
-}
 .mailtoui-brand a{
     color : rgba(255, 255, 255, 0.12);
 }
@@ -2013,20 +2007,6 @@ img.u-pull-left{
     max-width: 1200px;
     white-space: normal;  
 }
-.text-huge-title{
-    font-size: clamp(1rem, 3vw, 3rem);
-    line-height: 1.3;                         
-    overflow: visible;                        
-}
-.cursor{
-    display: inline-block;
-    background: #f0a500;
-    width: 3px;             
-    height: 1.05em;
-    animation: blink 0.7s step-start infinite; 
-    margin-left: 2px;
-    border-radius: 2px;
-}
 @keyframes blink{
     50% { opacity: 0; }
 }
@@ -2109,9 +2089,6 @@ img.u-pull-left{
 .s-intro .typewriter-container{
   margin-bottom: var(--vspace-2);
 }
-.s-about{
-  padding-top: var(--vspace-4);
-}
 #intro{ 
   isolation: isolate; 
   padding-bottom: clamp(10rem, 20vh, 18rem) !important; 
@@ -2164,17 +2141,6 @@ img.u-pull-left{
 
 .typewriter-line {
   opacity: 1 !important;
-}
-
-.cursor {
-  display: inline-block;
-  background: #f0a500;
-  width: 3px;
-  height: 1em;
-  animation: blink 0.8s step-start infinite;
-  margin-left: 2px;
-  border-radius: 1px;
-  vertical-align: bottom;
 }
 
 .text-huge-title {
