@@ -95,19 +95,18 @@
                             Hello World
                         </div>
 
-                        <h1 class="text-huge-title">
-                            I am Granth, a <br>
-                            Machine Learning <br>
-                            enthusiast & <br>
-                            Software Developement <br>
-                            Engineer based <br>
-                            out of New Delhi.
-                        </h1>
+                        <div class="typewriter-container">
+                            <h1 class="text-huge-title" id="tw-title"></h1>
+                            <span class="cursor"></span>
+                        </div>
+
+                        <div class="status"><span id="status-text">Initializing...</span></div>
+
                     </div>
 
                     <ul class="intro-social">
-                        <li><a href="https://github.com/granthbagadia">GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/granthbagadia">LinkedIn</a></li>
+                        <li><a href="https://github.com/granth23">GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/granth-bagadia">LinkedIn</a></li>
                         <li><a href="mailto:granthbagadia2004@gmail.com">Email</a></li>
                     </ul>
 
@@ -144,7 +143,7 @@
                                 About
                             </h2>
                             <p class="attention-getter" data-animate-el>
-                                Aspiring Computer Science undergraduate with a strong foundation in
+                                I am a Computer Science undergraduate with a strong foundation in
                                 Machine Learning, Deep Learning, and Software Development. Currently
                                 pursuing my Bachelor's degree at Birla Institute of Technology and Science, Pilani.
                                 I have research experience in Machine Learning and Deep Learning, with publications
@@ -175,6 +174,7 @@
                     </div>
                 </div> <!-- end about-expertise -->
 
+                
             </section> <!-- end s-about -->
 
 
@@ -636,7 +636,6 @@
 
                     </div> <!-- end column -->
 
-
                     <!-- Modal Templates Popup for Projects
                     -------------------------------------------- -->
                     <div id="modal-04" hidden>
@@ -747,16 +746,16 @@
                     <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
                         <h3 class="text-pretitle">Reach me at</h3>
                         <p class="contact-links">
-                            <a href="mailto:granthbagadia2004@gmail.com"
-                                class="mailtoui">granthbagadia2004@gmail.com</a> <br>
                             <a href="tel:+918527995341">+91-85279 95341</a>
+                            <a href="mailto:granthbagadia2004@gmail.com"
+                                class="mailtoui">granthbagadia2004@gmail.com</a> <br>                        
                         </p>
                     </div>
                     <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
                         <h3 class="text-pretitle">Social & Professional</h3>
                         <ul class="contact-social">
-                            <li><a href="https://github.com/granthbagadia">GitHub</a></li>
-                            <li><a href="https://linkedin.com/in/granthbagadia">LinkedIn</a></li>
+                            <li><a href="https://github.com/granth23">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/granth-bagadia/">LinkedIn</a></li>
                             <li><a href="mailto:granthbagadia2004@gmail.com">Email</a></li>
                         </ul>
                     </div>
@@ -801,6 +800,213 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        class InfiniteTypewriter {
+            constructor() {
+                // DOM
+                this.title = document.getElementById('tw-title');
+                this.cursor = document.querySelector('.cursor');
+                this.statusText = document.getElementById('status-text');
+
+                // ⚡ Faster timings
+                this.typingSpeed = 45;      // ms per char (was 100)
+                this.backspaceSpeed = 25;   // ms per char (was 50)
+                this.lineDelay = 300;       // between lines (was 800)
+                this.cycleDelay = 900;      // pause before direction change (was 2000)
+
+                // State
+                this.currentLineIndex = 0;
+                this.currentCharIndex = 0;
+                this.isTypingForward = true;
+
+                // 🔁 Alternate between two full texts (add more if you want)
+                this.textSets = [
+                    "I’m Granth (aka holycow), I am passionate about machine learning and software development, building real-world AI solutions!",
+                    "Welcome to my portfolio website! I build AI systems and full-stack products that ship 🚀. Lets Connect!"
+                ];
+                this.currentSetIndex = 0;
+
+                // Computed
+                this.lines = [];  // wrapped lines for current set
+
+                // Hidden measurer for accurate wrapping
+                this.measurer = document.createElement('span');
+                this.measurer.style.visibility = 'hidden';
+                this.measurer.style.position = 'fixed';
+                this.measurer.style.whiteSpace = 'nowrap';
+                this.title.appendChild(this.measurer);
+
+                // Debounced resize handler
+                let resizeTimer = null;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => this.rewrapAndRestart(), 120);
+                });
+
+                this.init();
+            }
+
+            init() {
+                this.prepareLinesForCurrentSet();
+                this.renderEmptyLines();
+                this.positionCursor(0);
+                setTimeout(() => this.startTyping(), 400);
+            }
+
+            // Convert a long string into wrapped lines that fit the title width
+            wrapTextToLines(text) {
+                const containerWidth = this.title.clientWidth || this.title.getBoundingClientRect().width;
+
+                // Match font of the title for accurate measuring
+                const style = getComputedStyle(this.title);
+                Object.assign(this.measurer.style, {
+                    fontFamily: style.fontFamily,
+                    fontSize: style.fontSize,
+                    fontWeight: style.fontWeight,
+                    letterSpacing: style.letterSpacing
+                });
+
+                const words = text.split(/\s+/);
+                const lines = [];
+                let current = "";
+
+                for (let i = 0; i < words.length; i++) {
+                    const candidate = current ? current + " " + words[i] : words[i];
+                    this.measurer.textContent = candidate;
+                    const w = this.measurer.getBoundingClientRect().width;
+
+                    if (w <= containerWidth || !current) {
+                        current = candidate;
+                    } else {
+                        lines.push(current);
+                        current = words[i];
+                    }
+                }
+                if (current) lines.push(current);
+                return lines;
+            }
+
+            prepareLinesForCurrentSet() {
+                const text = this.textSets[this.currentSetIndex];
+                this.lines = this.wrapTextToLines(text);
+            }
+
+            renderEmptyLines() {
+                this.title.innerHTML = ""; // clear
+                this.lines.forEach(() => {
+                    const lineWrap = document.createElement('div');
+                    lineWrap.className = 'line-container';
+                    const span = document.createElement('span');
+                    span.className = 'typewriter-line';
+                    lineWrap.appendChild(span);
+                    this.title.appendChild(lineWrap);
+                });
+                // reattach measurer & cursor
+                this.title.appendChild(this.measurer);
+                this.title.appendChild(this.cursor);
+                this.typewriterSpans = this.title.querySelectorAll('.typewriter-line');
+            }
+
+            startTyping() {
+                this.isTypingForward ? this.typeForward() : this.typeBackward();
+            }
+
+            updateStatus(text, cls) {
+                if (!this.statusText) return;
+                this.statusText.textContent = text;
+                this.statusText.className = cls || "";
+            }
+
+            positionCursor(lineIndex) {
+                const wraps = this.title.querySelectorAll('.line-container');
+                if (!wraps.length) return;
+                const idx = Math.max(0, Math.min(lineIndex, wraps.length - 1));
+                wraps[idx].appendChild(this.cursor);
+            }
+
+            typeForward() {
+                if (this.currentLineIndex >= this.lines.length) {
+                    this.updateStatus('Paused', 'paused');
+                    setTimeout(() => {
+                        this.isTypingForward = false;
+                        this.currentLineIndex = this.lines.length - 1;
+                        this.currentCharIndex = (this.lines[this.currentLineIndex] || "").length;
+                        this.startTyping();
+                    }, this.cycleDelay);
+                    return;
+                }
+
+                const span = this.typewriterSpans[this.currentLineIndex];
+                const full = this.lines[this.currentLineIndex];
+
+                span.classList.add('visible');
+                this.positionCursor(this.currentLineIndex);
+
+                if (this.currentCharIndex < full.length) {
+                    span.textContent = full.slice(0, this.currentCharIndex + 1);
+                    this.currentCharIndex++;
+                    setTimeout(() => this.typeForward(), this.typingSpeed);
+                } else {
+                    this.currentCharIndex = 0;
+                    this.currentLineIndex++;
+                    setTimeout(() => this.typeForward(), this.lineDelay);
+                }
+            }
+
+            typeBackward() {
+                if (this.currentLineIndex < 0) {
+                    this.updateStatus('Paused', 'paused');
+                    setTimeout(() => {
+                        // 🔁 switch to next set before typing forward
+                        this.currentSetIndex = (this.currentSetIndex + 1) % this.textSets.length;
+                        this.prepareLinesForCurrentSet();
+                        this.renderEmptyLines();
+
+                        this.isTypingForward = true;
+                        this.currentLineIndex = 0;
+                        this.currentCharIndex = 0;
+                        this.startTyping();
+                    }, this.cycleDelay);
+                    return;
+                }
+
+                const span = this.typewriterSpans[this.currentLineIndex];
+                const full = this.lines[this.currentLineIndex];
+
+                this.positionCursor(this.currentLineIndex);
+
+                if (this.currentCharIndex > 0) {
+                    this.currentCharIndex--;
+                    span.textContent = full.slice(0, this.currentCharIndex);
+                    setTimeout(() => this.typeBackward(), this.backspaceSpeed);
+                } else {
+                    span.classList.remove('visible');
+                    span.textContent = '';
+                    this.currentLineIndex--;
+                    if (this.currentLineIndex >= 0) {
+                        this.currentCharIndex = this.lines[this.currentLineIndex].length;
+                    }
+                    setTimeout(() => this.typeBackward(), this.lineDelay);
+                }
+            }
+
+            rewrapAndRestart() {
+                // Re-wrap current set and restart cleanly (keeps it snappy on resize)
+                const wasForward = this.isTypingForward;
+                this.prepareLinesForCurrentSet();
+                this.renderEmptyLines();
+                this.currentLineIndex = wasForward ? 0 : this.lines.length - 1;
+                this.currentCharIndex = wasForward ? 0 : (this.lines[this.currentLineIndex] || "").length;
+                this.startTyping();
+            }
+        }
+
+        const boot = () => new InfiniteTypewriter();
+        document.addEventListener('DOMContentLoaded', () => setTimeout(boot, 300));
+        if (document.readyState !== 'loading') setTimeout(boot, 300);
+
+    </script>
 
 </body>
 
