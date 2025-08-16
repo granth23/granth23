@@ -2211,3 +2211,11 @@ img.u-pull-left{
 @keyframes blink {
     50% { opacity: 0; }
 }
+
+/* Bigger typewriter font on small screens */
+@media screen and (max-width: 600px) {
+  .text-huge-title {
+    font-size: clamp(3rem, 8vw, 8rem) !important;
+    line-height: 1.4 !important;
+  }
+}
