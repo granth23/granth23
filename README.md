@@ -1,14 +1,22 @@
 <h2 align="left">Hi, my name is <a href="https://www.linkedin.com/in/granth-bagadia/">Granth Bagadia</a> and I'm a student at <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a></h2>
 
-###
-
 <img align="right" height="190" style="margin-left: 10px" src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif"  />
 
-###
-
-<h4 align="left">I'm Granth Bagadia, a passionate computer science student at BITS Pilani. Fuelled by my love for AI and coding, I'm dedicated to unravelling technology's possibilities, aspiring to innovate and shape the future.<br><br>🤖 Proficient in Machine Learning algorithms and implementation using the same.<br>👨‍💻 Proficient in programming languages such as Python, JavaScript, C and C++.<br>🤖 Experience working with DBMS such as Firebase, Mongo and MySQL, PostgreSQL.<br>👨‍💻 Knowledge of web development frameworks, such as Flask, Springboot and React.<br>🤖 Expertise in Back-End Web Development using Python, Flask and React.<br>👨‍💻 Expertise in team leading at various Companies and Award-winning projects.</h4>
-
-###
+<div class="align="left">
+  <h4>
+    Hi, I'm Granth Bagadia, a Computer Science undergraduate at Birla Institute of Technology and Science, Pilani with a strong foundation in Artificial Intelligence, Machine Learning, Deep Learning, and Software Development. I have hands-on experience in research, industry internships, and open-source contributions (Google Summer of Code 2025, MetaBrainz Foundation). My work spans from anomaly detection research published in IEEE to building AI-driven systems for education, security, and enterprise applications.
+  </h4>
+  <ul>
+    <li>Skilled in <b>Python, C/C++, JavaScript, and Java</b></li>
+    <li>Experienced with <b>PyTorch, TensorFlow, HuggingFace, and LangChain</b></li>
+    <li>Proficient in <b>Flask, React, Firebase, PostgreSQL, and MongoDB</b></li>
+    <li>Research &amp; development focus: <b>Anomaly detection, computer vision, NLP, and applied AI</b></li>
+  </ul>
+  <h4>
+    Always curious to explore new ideas and contribute to impactful projects in 
+    <b>AI research, software engineering, and web development</b>.
+  </h4>
+</div>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="47" height="35" alt="gmail logo"  />
@@ -18,8 +26,6 @@
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="47" height="35" alt="linkedin logo"  />
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg" width="47" height="35" alt="facebook logo"  />
 </div>
-
-###
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
@@ -37,8 +43,4 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="30" alt="csharp logo"  />
 </div>
 
-###
-
 <img src="https://raw.githubusercontent.com/granth23/granth23/output/snake.svg" alt="Snake animation" />
-
-###
