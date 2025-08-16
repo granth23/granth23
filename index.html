@@ -16,8 +16,7 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -174,7 +173,72 @@
                     </div>
                 </div> <!-- end about-expertise -->
 
-                
+                <div class="row about-stack" data-animate-block>
+                    <div class="column lg-12">
+                        <h2 class="text-pretitle" data-animate-el>Tech Stack</h2>
+
+                        <div class="tech-grid" data-animate-el>
+                            <div class="tech-card">
+                                <h3 class="tech-card-h5">Programming Languages</h3>
+                                <div class="tech-badges">
+                                    <span class="badge">Python</span>
+                                    <span class="badge">JavaScript</span>
+                                    <span class="badge">Java</span>
+                                    <span class="badge">C++</span>
+                                    <span class="badge">C</span>
+                                </div>
+                            </div>
+
+                            <div class="tech-card">
+                                <h3 class="tech-card-h5">ML / DL Stacks</h3>
+                                <div class="tech-badges">
+                                    <span class="badge">PyTorch</span>
+                                    <span class="badge">TensorFlow</span>
+                                    <span class="badge">Keras</span>
+                                    <span class="badge">Scikit-learn</span>
+                                </div>
+                            </div>
+
+                            <div class="tech-card">
+                                <h3 class="tech-card-h5">Web Development</h3>
+                                <div class="tech-badges">
+                                    <span class="badge">Flask</span>
+                                    <span class="badge">React</span>
+                                    <span class="badge">Springboot</span>
+                                </div>
+                            </div>
+
+                            <div class="tech-card">
+                                <h3 class="tech-card-h5">AI Applications</h3>
+                                <div class="tech-badges">
+                                    <span class="badge">Natural Language Processing</span>
+                                    <span class="badge">Computer Vision</span>
+                                </div>
+                            </div>
+
+
+                            <div class="tech-card">
+                                <h3 class="tech-card-h5">Databases</h3>
+                                <div class="tech-badges">
+                                    <span class="badge">Firebase</span>
+                                    <span class="badge">MongoDB</span>
+                                    <span class="badge">PostgreSQL</span>
+                                    <span class="badge">SQL</span>
+                                </div>
+                            </div>
+
+                            <div class="tech-card">
+                                <h3 class="tech-card-h5">DevOps & Tools</h3>
+                                <div class="tech-badges">
+                                    <span class="badge">Git</span>
+                                    <span class="badge">Docker</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </section> <!-- end s-about -->
 
 
@@ -748,7 +812,7 @@
                         <p class="contact-links">
                             <a href="tel:+918527995341">+91-85279 95341</a>
                             <a href="mailto:granthbagadia2004@gmail.com"
-                                class="mailtoui">granthbagadia2004@gmail.com</a> <br>                        
+                                class="mailtoui">granthbagadia2004@gmail.com</a> <br>
                         </p>
                     </div>
                     <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
@@ -800,213 +864,62 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
     <script>
-        class InfiniteTypewriter {
-            constructor() {
-                // DOM
-                this.title = document.getElementById('tw-title');
-                this.cursor = document.querySelector('.cursor');
-                this.statusText = document.getElementById('status-text');
-
-                // ⚡ Faster timings
-                this.typingSpeed = 45;      // ms per char (was 100)
-                this.backspaceSpeed = 25;   // ms per char (was 50)
-                this.lineDelay = 300;       // between lines (was 800)
-                this.cycleDelay = 900;      // pause before direction change (was 2000)
-
-                // State
-                this.currentLineIndex = 0;
-                this.currentCharIndex = 0;
-                this.isTypingForward = true;
-
-                // 🔁 Alternate between two full texts (add more if you want)
-                this.textSets = [
-                    "I’m Granth (aka holycow), I am passionate about machine learning and software development, building real-world AI solutions!",
-                    "Welcome to my portfolio website! I build AI systems and full-stack products that ship 🚀. Lets Connect!"
-                ];
-                this.currentSetIndex = 0;
-
-                // Computed
-                this.lines = [];  // wrapped lines for current set
-
-                // Hidden measurer for accurate wrapping
-                this.measurer = document.createElement('span');
-                this.measurer.style.visibility = 'hidden';
-                this.measurer.style.position = 'fixed';
-                this.measurer.style.whiteSpace = 'nowrap';
-                this.title.appendChild(this.measurer);
-
-                // Debounced resize handler
-                let resizeTimer = null;
-                window.addEventListener('resize', () => {
-                    clearTimeout(resizeTimer);
-                    resizeTimer = setTimeout(() => this.rewrapAndRestart(), 120);
-                });
-
-                this.init();
-            }
-
-            init() {
-                this.prepareLinesForCurrentSet();
-                this.renderEmptyLines();
-                this.positionCursor(0);
-                setTimeout(() => this.startTyping(), 400);
-            }
-
-            // Convert a long string into wrapped lines that fit the title width
-            wrapTextToLines(text) {
-                const containerWidth = this.title.clientWidth || this.title.getBoundingClientRect().width;
-
-                // Match font of the title for accurate measuring
-                const style = getComputedStyle(this.title);
-                Object.assign(this.measurer.style, {
-                    fontFamily: style.fontFamily,
-                    fontSize: style.fontSize,
-                    fontWeight: style.fontWeight,
-                    letterSpacing: style.letterSpacing
-                });
-
-                const words = text.split(/\s+/);
-                const lines = [];
-                let current = "";
-
-                for (let i = 0; i < words.length; i++) {
-                    const candidate = current ? current + " " + words[i] : words[i];
-                    this.measurer.textContent = candidate;
-                    const w = this.measurer.getBoundingClientRect().width;
-
-                    if (w <= containerWidth || !current) {
-                        current = candidate;
-                    } else {
-                        lines.push(current);
-                        current = words[i];
-                    }
-                }
-                if (current) lines.push(current);
-                return lines;
-            }
-
-            prepareLinesForCurrentSet() {
-                const text = this.textSets[this.currentSetIndex];
-                this.lines = this.wrapTextToLines(text);
-            }
-
-            renderEmptyLines() {
-                this.title.innerHTML = ""; // clear
-                this.lines.forEach(() => {
-                    const lineWrap = document.createElement('div');
-                    lineWrap.className = 'line-container';
-                    const span = document.createElement('span');
-                    span.className = 'typewriter-line';
-                    lineWrap.appendChild(span);
-                    this.title.appendChild(lineWrap);
-                });
-                // reattach measurer & cursor
-                this.title.appendChild(this.measurer);
-                this.title.appendChild(this.cursor);
-                this.typewriterSpans = this.title.querySelectorAll('.typewriter-line');
-            }
-
-            startTyping() {
-                this.isTypingForward ? this.typeForward() : this.typeBackward();
-            }
-
-            updateStatus(text, cls) {
-                if (!this.statusText) return;
-                this.statusText.textContent = text;
-                this.statusText.className = cls || "";
-            }
-
-            positionCursor(lineIndex) {
-                const wraps = this.title.querySelectorAll('.line-container');
-                if (!wraps.length) return;
-                const idx = Math.max(0, Math.min(lineIndex, wraps.length - 1));
-                wraps[idx].appendChild(this.cursor);
-            }
-
-            typeForward() {
-                if (this.currentLineIndex >= this.lines.length) {
-                    this.updateStatus('Paused', 'paused');
-                    setTimeout(() => {
-                        this.isTypingForward = false;
-                        this.currentLineIndex = this.lines.length - 1;
-                        this.currentCharIndex = (this.lines[this.currentLineIndex] || "").length;
-                        this.startTyping();
-                    }, this.cycleDelay);
-                    return;
-                }
-
-                const span = this.typewriterSpans[this.currentLineIndex];
-                const full = this.lines[this.currentLineIndex];
-
-                span.classList.add('visible');
-                this.positionCursor(this.currentLineIndex);
-
-                if (this.currentCharIndex < full.length) {
-                    span.textContent = full.slice(0, this.currentCharIndex + 1);
-                    this.currentCharIndex++;
-                    setTimeout(() => this.typeForward(), this.typingSpeed);
-                } else {
-                    this.currentCharIndex = 0;
-                    this.currentLineIndex++;
-                    setTimeout(() => this.typeForward(), this.lineDelay);
-                }
-            }
-
-            typeBackward() {
-                if (this.currentLineIndex < 0) {
-                    this.updateStatus('Paused', 'paused');
-                    setTimeout(() => {
-                        // 🔁 switch to next set before typing forward
-                        this.currentSetIndex = (this.currentSetIndex + 1) % this.textSets.length;
-                        this.prepareLinesForCurrentSet();
-                        this.renderEmptyLines();
-
-                        this.isTypingForward = true;
-                        this.currentLineIndex = 0;
-                        this.currentCharIndex = 0;
-                        this.startTyping();
-                    }, this.cycleDelay);
-                    return;
-                }
-
-                const span = this.typewriterSpans[this.currentLineIndex];
-                const full = this.lines[this.currentLineIndex];
-
-                this.positionCursor(this.currentLineIndex);
-
-                if (this.currentCharIndex > 0) {
-                    this.currentCharIndex--;
-                    span.textContent = full.slice(0, this.currentCharIndex);
-                    setTimeout(() => this.typeBackward(), this.backspaceSpeed);
-                } else {
-                    span.classList.remove('visible');
-                    span.textContent = '';
-                    this.currentLineIndex--;
-                    if (this.currentLineIndex >= 0) {
-                        this.currentCharIndex = this.lines[this.currentLineIndex].length;
-                    }
-                    setTimeout(() => this.typeBackward(), this.lineDelay);
-                }
-            }
-
-            rewrapAndRestart() {
-                // Re-wrap current set and restart cleanly (keeps it snappy on resize)
-                const wasForward = this.isTypingForward;
-                this.prepareLinesForCurrentSet();
-                this.renderEmptyLines();
-                this.currentLineIndex = wasForward ? 0 : this.lines.length - 1;
-                this.currentCharIndex = wasForward ? 0 : (this.lines[this.currentLineIndex] || "").length;
-                this.startTyping();
-            }
+class ResponsiveTypewriter {
+    constructor() {
+        this.title = document.getElementById('tw-title');
+        this.cursor = document.querySelector('.cursor');
+        
+        this.typingSpeed = 80;
+        this.backspaceSpeed = 40;
+        this.pauseDelay = 2000;
+        
+        this.texts = [
+            "I'm Granth (aka holycow), I am passionate about Machine Learning, Deep Learning and Software Development, building real-world AI solutions!",
+            "Welcome to my portfolio website! I build Artificial Intelligence systems and Full-Stack products that ship 🚀. Let's Connect!"
+        ];
+        
+        this.currentTextIndex = 0;
+        this.currentCharIndex = 0;
+        this.isDeleting = false;
+        
+        this.start();
+    }
+    
+    start() {
+        this.type();
+    }
+    
+    type() {
+        const currentText = this.texts[this.currentTextIndex];
+        
+        if (this.isDeleting) {
+            this.title.textContent = currentText.substring(0, this.currentCharIndex - 1);
+            this.currentCharIndex--;
+        } else {
+            this.title.textContent = currentText.substring(0, this.currentCharIndex + 1);
+            this.currentCharIndex++;
         }
+        
+        let typeSpeed = this.isDeleting ? this.backspaceSpeed : this.typingSpeed;
+        
+        if (!this.isDeleting && this.currentCharIndex === currentText.length) {
+            typeSpeed = this.pauseDelay;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.currentCharIndex === 0) {
+            this.isDeleting = false;
+            this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
+            typeSpeed = 500;
+        }
+        
+        setTimeout(() => this.type(), typeSpeed);
+    }
+}
 
-        const boot = () => new InfiniteTypewriter();
-        document.addEventListener('DOMContentLoaded', () => setTimeout(boot, 300));
-        if (document.readyState !== 'loading') setTimeout(boot, 300);
-
-    </script>
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => new ResponsiveTypewriter(), 500);
+});
+</script>
 
 </body>
 
