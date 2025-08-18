@@ -3036,6 +3036,7 @@ img.u-pull-left {
     font-size: 0.9rem;
     border: 1px solid #ccc;
     font-family: monospace;
+    visibility: hidden;
 }
 
 .tech-grid {
