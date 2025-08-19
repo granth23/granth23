@@ -130,9 +130,8 @@
                 <div class="row about-info wide" data-animate-block>
 
                     <div class="column lg-6 md-12 about-info__pic-block">
-                        <img src="images/about-photo.jpg"
-                            srcset="images/about-photo.jpg 1x, images/about-photo.jpg 2x" alt=""
-                            class="about-info__pic" data-animate-el>
+                        <img src="images/about-photo.jpg" srcset="images/about-photo.jpg 1x, images/about-photo.jpg 2x"
+                            alt="" class="about-info__pic" data-animate-el>
                     </div>
 
                     <div class="column lg-6 md-12">
@@ -826,42 +825,40 @@
             ================================================== -->
             <section id="contact" class="s-contact target-section">
 
-                <div class="row contact-top">
+                <div class="row contact-wrapper">
                     <div class="column lg-12">
-                        <h2 class="text-pretitle">
-                            Get In Touch
-                        </h2>
+                        <h2 class="text-pretitle">Get In Touch</h2>
+                    </div>
 
+                    <!-- Left column: text -->
+                    <div class="column contact-left">
                         <p class="h1">
                             I love to connect with fellow researchers and professionals.
                             Whether you have questions about my research, want to collaborate,
-                            or discuss opportunities in AI/ML – feel free to reach out.
+                            or discuss opportunities in Artificial Intelligence or Software 
+                            Developement – feel free to reach out.
                         </p>
                     </div>
-                </div> <!-- end contact-top -->
 
-                <div class="row contact-bottom">
-                    <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
-                        <h3 class="text-pretitle">Reach me at</h3>
-                        <p class="contact-links">
-                            <a href="tel:+918527995341">+91-85279 95341</a>
+                    <!-- Right column: card -->
+                    <div class="column contact-right">
+                        <div class="contact-card">
+                            <h3 class="text-pretitle">Reach me at</h3>
+                            <ul class="contact-list">
+                                <li><a href="tel:+918527995341">+91-85279 95341</a></li>
+                                <li><a href="mailto:granthbagadia2004@gmail.com"
+                                        class="mailtoui">granthbagadia2004@gmail.com</a></li>
+                                <li>
+                                    <a href="https://github.com/granth23">GitHub</a>
+                                    <span class="sep">•</span>
+                                    <a href="https://www.linkedin.com/in/granth-bagadia/">LinkedIn</a>
+                                </li>
+                            </ul>
                             <a href="mailto:granthbagadia2004@gmail.com"
-                                class="mailtoui">granthbagadia2004@gmail.com</a> <br>
-                        </p>
+                                class="mailtoui btn btn--medium contact-cta">Say Hello.</a>
+                        </div>
                     </div>
-                    <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
-                        <h3 class="text-pretitle">Social & Professional</h3>
-                        <ul class="contact-social">
-                            <li><a href="https://github.com/granth23">GitHub</a></li>
-                            <li><a href="https://www.linkedin.com/in/granth-bagadia/">LinkedIn</a></li>
-                            <li><a href="mailto:granthbagadia2004@gmail.com">Email</a></li>
-                        </ul>
-                    </div>
-                    <div class="column lg-4 md-12 contact-block">
-                        <a href="mailto:granthbagadia2004@gmail.com"
-                            class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
-                    </div>
-                </div> <!-- end contact-bottom -->
+                </div>
 
             </section> <!-- end contact -->
 
@@ -875,7 +872,7 @@
             <div class="row">
                 <div class="column ss-copyright">
                     <span>© Copyright Granth Bagadia 2025</span>
-                    <span>Machine Learning enthusiast & Software Developement Engineer</span>
+                    <span>Artificial Intelligence enthusiast & Software Developement Engineer</span>
                 </div>
 
                 <div class="ss-go-top">
@@ -893,9 +890,6 @@
 
     </div> <!-- end -s-pagewrap -->
 
-
-    <!-- Java Script
-    ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script>
@@ -904,12 +898,12 @@
                 this.title = document.getElementById('tw-title');
                 this.cursor = document.querySelector('.cursor');
 
-                this.typingSpeed = 80;
-                this.backspaceSpeed = 40;
-                this.pauseDelay = 2000;
+                this.typingSpeed = 40;
+                this.backspaceSpeed = 20;
+                this.pauseDelay = 1000;
 
                 this.texts = [
-                    `I'm <span class="accent">Granth</span> (aka <span class="accent">holycow</span>), I am passionate about <span class="domain">Machine Learning</span>, <span class="domain">Deep Learning</span> and <span class="domain">Software Development</span>, building real-world <span class="domain">AI solutions</span>!`,
+                    `I'm <span class="accent">Granth</span> (aka <span class="accent-2">holycow</span>), I am passionate about <span class="domain">Machine Learning</span>, <span class="domain">Deep Learning</span> and <span class="domain">Software Development</span>, building real-world <span class="domain">AI solutions</span>!`,
                     `Welcome to my portfolio website! I build <span class="domain">Artificial Intelligence</span> systems and <span class="domain">Full-Stack</span> products that ship 🚀. <span class="accent">Let's Connect!</span>`
                 ];
 
@@ -922,16 +916,13 @@
 
             start() { this.type(); }
 
-            // advance forward without revealing partial tags/entities
             _advanceForward(text, i) {
                 if (text[i] === '<') return text.indexOf('>', i) + 1;              // whole tag
                 if (text[i] === '&') return text.indexOf(';', i) + 1;              // whole entity
                 return i + 1;                                                      // normal char
             }
 
-            // step backward without leaving trailing '>'
             _retreatBackward(text, i) {
-                // if we're just after a tag, jump back to its '<'
                 if (text[i - 1] === '>') return text.lastIndexOf('<', i - 1);
                 // if we're just after an entity, jump back to its '&'
                 if (text[i - 1] === ';') {
@@ -950,7 +941,6 @@
                     this.currentCharIndex = Math.min(t.length, this._advanceForward(t, this.currentCharIndex));
                 }
 
-                // Safe: always render complete tags/entities only
                 this.title.innerHTML = t.slice(0, this.currentCharIndex);
 
                 let speed = this.isDeleting ? this.backspaceSpeed : this.typingSpeed;
